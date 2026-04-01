@@ -1,6 +1,8 @@
 # aBCI OpenSource Contribution Example
 
 This repository serves as a teaching example for university students learning how to contribute to open-source software projects. It demonstrates best practices for creating pull requests, writing documentation, and collaborating on GitHub.
+During this exercise, students will create a Jupyter notebook that serves as an example for the documentation of the Donders aBCI course. The result will be presented on the [https://bsdlab.github.io/aBCI-OSS-example/](https://bsdlab.github.io/aBCI-OSS-example/) page
+associated with this repository. 
 
 ## Purpose
 
