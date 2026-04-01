@@ -1,0 +1,116 @@
+---
+title: "Quick Start"
+---
+
+## 5-Minute Quick Start 🚀
+
+This guide gets you contributing in 5 minutes. For detailed instructions, see the [Contributing Guide](contributing.qmd).
+
+### 1. Fork & Clone (1 min)
+
+```bash
+# Fork on GitHub, then:
+git clone git@github.com:YOUR_USERNAME/aBCI-OSS-example.git
+cd aBCI-OSS-example
+```
+
+### 2. Setup Environment (2 min)
+
+```bash
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -e ".[docs]"
+```
+
+### 3. Create Your Example (1 min)
+
+```bash
+# Create a branch
+git checkout -b add-example-YOUR_NAME
+
+# Start Jupyter
+jupyter notebook docs/examples/
+```
+
+Create a notebook with:
+- Title and introduction
+- Code examples with explanations
+- Visualizations or outputs
+- Conclusion
+
+### 4. Test Locally (30 sec)
+
+```bash
+# Build and preview
+quarto preview
+```
+
+Check that your notebook appears and renders correctly.
+
+### 5. Submit PR (30 sec)
+
+```bash
+# Commit and push
+git add docs/examples/your_example.ipynb
+git commit -m "docs: Add example on [YOUR TOPIC]"
+git push origin add-example-YOUR_NAME
+```
+
+Go to https://github.com/bsdlab/aBCI-OSS-example and create a pull request!
+
+## Example Notebook Structure
+
+```markdown
+# Title of Your Example
+
+Brief description of what you'll demonstrate.
+
+**Author:** Your Name
+```
+
+```python
+# Import required libraries
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+```markdown
+## Section 1: Concept Explanation
+
+Explain the concept you're teaching...
+```
+
+```python
+# Demonstrate with code
+data = np.random.randn(100)
+plt.plot(data)
+plt.title("Example Visualization")
+plt.show()
+```
+
+```markdown
+## Conclusion
+
+Summarize what was learned...
+```
+
+## Need More Help?
+
+- **Detailed guide:** [Contributing Guide](contributing.qmd)
+- **Installation issues:** [Installation Guide](installation.qmd)
+- **Questions:** Open an issue on GitHub
+
+## Checklist ✅
+
+Before submitting your PR:
+
+- [ ] Notebook runs without errors
+- [ ] Code includes explanations
+- [ ] Quarto builds successfully (`quarto preview`)
+- [ ] Commit message is clear
+- [ ] Branch name is descriptive
+
+Happy contributing! 🎉

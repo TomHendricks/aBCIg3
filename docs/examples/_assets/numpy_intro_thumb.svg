@@ -1,0 +1,37 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f0f4f8"/>
+  
+  <!-- Grid -->
+  <line x1="50" y1="50" x2="550" y2="50" stroke="#d1d9e0" stroke-width="1"/>
+  <line x1="50" y1="100" x2="550" y2="100" stroke="#d1d9e0" stroke-width="1"/>
+  <line x1="50" y1="150" x2="550" y2="150" stroke="#d1d9e0" stroke-width="1"/>
+  <line x1="50" y1="200" x2="550" y2="200" stroke="#d1d9e0" stroke-width="1"/>
+  <line x1="50" y1="250" x2="550" y2="250" stroke="#d1d9e0" stroke-width="1"/>
+  <line x1="50" y1="300" x2="550" y2="300" stroke="#d1d9e0" stroke-width="1"/>
+  <line x1="50" y1="350" x2="550" y2="350" stroke="#d1d9e0" stroke-width="1"/>
+  
+  <!-- Line plot (simulated random data) -->
+  <polyline points="50,200 100,180 150,220 200,190 250,230 300,170 350,210 400,195 450,240 500,205 550,220" 
+            fill="none" stroke="#2E86AB" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Points -->
+  <circle cx="50" cy="200" r="4" fill="#2E86AB"/>
+  <circle cx="100" cy="180" r="4" fill="#2E86AB"/>
+  <circle cx="150" cy="220" r="4" fill="#2E86AB"/>
+  <circle cx="200" cy="190" r="4" fill="#2E86AB"/>
+  <circle cx="250" cy="230" r="4" fill="#2E86AB"/>
+  <circle cx="300" cy="170" r="4" fill="#2E86AB"/>
+  <circle cx="350" cy="210" r="4" fill="#2E86AB"/>
+  <circle cx="400" cy="195" r="4" fill="#2E86AB"/>
+  <circle cx="450" cy="240" r="4" fill="#2E86AB"/>
+  <circle cx="500" cy="205" r="4" fill="#2E86AB"/>
+  <circle cx="550" cy="220" r="4" fill="#2E86AB"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">NumPy Arrays Tutorial</text>
+  
+  <!-- Axes labels -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">Index</text>
+  <text x="25" y="200" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle" transform="rotate(-90 25 200)">Value</text>
+</svg>

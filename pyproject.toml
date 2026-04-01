@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abci-oss-example"
+version = "0.1.0"
+authors = [{ name = "BSD Lab", email = "info@bsdlab.org" }]
+description = "Example package for teaching open-source contribution workflows in the aBCI course."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["teaching", "open-source", "bci", "neuroscience", "education"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Education",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "numpy>=1.20.0",
+  "pandas>=1.3.0",
+  "matplotlib>=3.5.0",
+  "mne>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/bsdlab/aBCI-OSS-example"
+Documentation = "https://bsdlab.github.io/aBCI-OSS-example/"
+Repository = "https://github.com/bsdlab/aBCI-OSS-example"
+Issues = "https://github.com/bsdlab/aBCI-OSS-example/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0", "ipython>=8.0.0", "ruff"]
+docs = [
+  "quartodoc",
+  "nbformat",
+  "nbclient",
+  "jupyter-cache",
+  "ipykernel",
+  "jupyter",
+  "griffe<2.0.0",
+]
+all = [
+  "pytest>=7.0.0",
+  "pytest-cov>=4.0.0",
+  "ipython>=8.0.0",
+  "ruff",
+  "quartodoc",
+  "nbformat",
+  "nbclient",
+  "jupyter-cache",
+  "ipykernel",
+  "jupyter",
+  "griffe<2.0.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = ["tests", "./"]
+filterwarnings = ["ignore:::.*fire.core"]
+
+# Adding e.g. custom css
+[tool.setuptools.package-data]
+abci_oss_example = ["*.txt"]

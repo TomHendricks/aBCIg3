@@ -1,0 +1,68 @@
+---
+title: "aBCI OSS Example"
+subtitle: "A hands-on repository for learning open-source contribution workflows"
+---
+
+## Welcome! 👋
+
+This is a teaching repository for the **Donders aBCI course**. Here you'll learn the essential skills for contributing to open-source software projects through hands-on practice.
+
+## What You'll Learn
+
+- **Git workflows**: Forking, branching, and pull requests
+- **Documentation**: Writing clear Jupyter notebooks with explanations
+- **Collaboration**: Code review and constructive feedback
+- **Tools**: Quarto for building beautiful documentation websites
+- **Best practices**: How professional open-source projects work
+
+## Your Mission 🎯
+
+Create a documentation example by:
+
+1. **Forking** this repository
+2. **Creating** a Jupyter notebook under `docs/examples/`
+3. **Writing** clear explanations and code examples
+4. **Building** the documentation locally with Quarto
+5. **Submitting** a pull request
+
+See the [Contributing Guide](guide/contributing.qmd) for step-by-step instructions.
+
+## Why This Matters
+
+Open-source software powers modern science and technology. By learning to contribute:
+
+- You join a global community of developers
+- You make your research reproducible and accessible
+- You build valuable professional skills
+- You help advance science through shared tools
+
+## Get Started
+
+Ready to contribute? Follow these steps:
+
+1. **Read the [Installation Guide](guide/installation.qmd)** to set up your environment
+2. **Check the [Quick Start](guide/quickstart.qmd)** for a rapid walkthrough
+3. **Review [Contributing Guide](guide/contributing.qmd)** for detailed instructions
+4. **Browse [Examples](examples/index.qmd)** to see what others have created
+
+## Example Topics for Your Notebook
+
+Need inspiration? Consider creating a notebook about:
+
+- Basic data analysis or visualization
+- Introduction to a Python library
+- Signal processing techniques  
+- Statistical analysis methods
+- BCI concepts or algorithms
+- Neuroimaging data exploration
+- Any topic you're learning in the course!
+
+## Need Help?
+
+- 📖 Check the guides in the navigation menu
+- 💬 Open an issue on GitHub
+- 🤝 Ask your classmates or instructors
+
+## License
+
+This repository is licensed under the MIT License - see the [LICENSE](https://github.com/bsdlab/aBCI-OSS-example/blob/main/LICENSE) file for details.

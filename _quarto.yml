@@ -1,0 +1,72 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "aBCI OSS Example"
+  description: "Teaching repository for open-source contributions in the aBCI course"
+  site-url: "https://bsdlab.github.io/aBCI-OSS-example"
+  repo-url: "https://github.com/bsdlab/aBCI-OSS-example"
+  repo-actions: [edit, issue]
+  
+  navbar:
+    background: "#343a40"
+    search: true
+    left:
+      - text: "Home"
+        file: docs/index.qmd
+      - text: "Examples"
+        file: docs/examples/index.qmd
+      - text: "Guide"
+        menu:
+          - text: "Installation"
+            file: docs/guide/installation.qmd
+          - text: "Quick Start"
+            file: docs/guide/quickstart.qmd
+          - text: "Contributing"
+            file: docs/guide/contributing.qmd
+    right:
+      - icon: github
+        href: "https://github.com/bsdlab/aBCI-OSS-example"
+        aria-label: GitHub
+
+  sidebar:
+    - id: examples
+      title: "Examples"
+      location: left
+      contents:
+        - docs/examples/index.qmd
+        - section: "Student Contributions"
+          contents: auto
+
+  page-footer:
+    left: |
+      Made with [Quarto](https://quarto.org/)
+    center: |
+      aBCI Course - Teaching Open Source Contributions
+    right:
+      - icon: github
+        href: "https://github.com/bsdlab/aBCI-OSS-example"
+        aria-label: GitHub
+
+format:
+  html:
+    theme: 
+      light: [cosmo, docs/custom.scss]
+    css: docs/styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-fold: false
+    code-tools: true
+    highlight-style: github
+    link-external-newwindow: true
+    number-sections: false
+
+execute:
+  cache: false
+  echo: true
+  warning: false
+  enabled: true
+
+jupyter: python3

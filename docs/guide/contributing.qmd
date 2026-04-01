@@ -1,0 +1,393 @@
+---
+title: "Contributing to aBCI OSS Example"
+---
+
+## Welcome Contributors! 🎉
+
+This guide will walk you through the process of contributing to this teaching repository. Don't worry if this is your first time - that's exactly what this repository is for!
+
+## Prerequisites
+
+- Git installed on your computer
+- GitHub account
+- Python 3.10 or higher
+- Basic familiarity with Jupyter notebooks
+
+## Step-by-Step Contribution Guide
+
+### 1. Fork the Repository
+
+1. Go to https://github.com/bsdlab/aBCI-OSS-example
+2. Click the "Fork" button in the top right
+3. This creates your own copy of the repository
+
+### 2. Clone Your Fork
+
+```bash
+# Replace YOUR_USERNAME with your GitHub username
+git clone git@github.com:YOUR_USERNAME/aBCI-OSS-example.git
+cd aBCI-OSS-example
+```
+
+### 3. Set Up Your Environment
+
+```bash
+# Create a virtual environment
+python -m venv .venv
+
+# Activate it
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -e ".[docs]"
+```
+
+### 4. Install Quarto
+
+Quarto is the documentation tool we use to build the website.
+
+**Windows:**
+```bash
+# Using chocolatey
+choco install quarto
+
+# Or download from https://quarto.org/docs/get-started/
+```
+
+**macOS:**
+```bash
+brew install quarto
+```
+
+**Linux:**
+```bash
+# Download from https://quarto.org/docs/get-started/
+# Example for Ubuntu:
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.549/quarto-1.4.549-linux-amd64.deb
+sudo dpkg -i quarto-1.4.549-linux-amd64.deb
+```
+
+Verify installation:
+```bash
+quarto --version
+```
+
+### 5. Create a Branch
+
+Always create a new branch for your contribution:
+
+```bash
+git checkout -b add-example-YOUR_NAME
+```
+
+Use descriptive branch names:
+- `add-example-signal-processing`
+- `add-example-data-visualization`
+- `add-example-statistics-intro`
+
+### 6. Create Your Notebook
+
+Navigate to the examples directory and create your notebook:
+
+```bash
+cd docs/examples
+jupyter notebook
+```
+
+Or create directly:
+```bash
+jupyter notebook docs/examples/my_example.ipynb
+```
+
+#### Notebook Structure
+
+A good example notebook should include:
+
+1. **Title Cell (Markdown)**
+   ```markdown
+   # Your Example Title
+   
+   Brief description of what this notebook demonstrates.
+   
+   **Author:** Your Name  
+   **Date:** 2026-04-01
+   ```
+
+2. **Introduction (Markdown)**
+   - What will readers learn?
+   - Why is this topic important?
+
+3. **Setup (Code)**
+   ```python
+   import numpy as np
+   import pandas as pd
+   import matplotlib.pyplot as plt
+   ```
+
+4. **Main Content**
+   - Alternate between explanation (markdown) and code cells
+   - Add comments in your code
+   - Show outputs and visualizations
+
+5. **Conclusion (Markdown)**
+   - Summarize key points
+   - Suggest further reading or exercises
+
+#### Example Notebook Template
+
+```python
+# Cell 1 (Markdown)
+# # Introduction to NumPy Arrays
+# This notebook introduces basic NumPy array operations...
+
+# Cell 2 (Code)
+import numpy as np
+print("NumPy version:", np.__version__)
+
+# Cell 3 (Markdown)
+# ## Creating Arrays
+# NumPy arrays are the foundation of scientific computing in Python...
+
+# Cell 4 (Code)
+arr = np.array([1, 2, 3, 4, 5])
+print("Array:", arr)
+print("Shape:", arr.shape)
+```
+
+### 7. Add Your Notebook Card
+
+To make your notebook discoverable, add a card to `docs/examples/index.qmd`:
+
+1. Open `docs/examples/index.qmd`
+2. Find the "Available Notebooks" section
+3. Add your card inside the grid layout:
+
+```markdown
+::: {.g-col-12 .g-col-md-6}
+::: {.card}
+![Short description](_assets/your_thumbnail.png){.card-img-top}
+
+::: {.card-body}
+### [Your Notebook Title](your_notebook_filename.ipynb)
+
+Brief description of what your notebook teaches (1-2 sentences).
+
+**Topics**: Topic1, Topic2, Topic3
+
+**Author**: Your Name
+:::
+:::
+:::
+```
+
+#### Creating a Thumbnail (Optional but Recommended)
+
+Add a visual thumbnail to make your card more attractive:
+
+**Option 1: Save a plot from your notebook**
+```python
+# In your notebook, save a figure
+fig.savefig('../_assets/my_thumbnail.png', dpi=150, bbox_inches='tight')
+```
+
+**Option 2: Create a simple image**
+- Size: 600x400px recommended
+- Format: PNG or SVG
+- Save in `docs/examples/_assets/`
+
+**Option 3: Use a remote URL**
+```markdown
+![Description](https://example.com/image.png){.card-img-top}
+```
+
+**Option 4: No thumbnail**
+Simply omit the image line - the card will still look good!
+
+Make sure to:
+- Use your actual notebook filename
+- Write a clear, inviting description
+- List 3-4 main topics covered
+- Add your name as the author
+- (Optional) Add a thumbnail image
+
+### 8. Build and Preview Locally
+
+Before submitting, always test your changes:
+
+```bash
+# From the repository root
+quarto render
+
+# Start a local preview server
+quarto preview
+```
+
+This will:
+- Build the documentation website
+- Open it in your browser
+- Auto-reload when you make changes
+
+Check that:
+- [ ] Your notebook appears in the Examples section
+- [ ] Your card displays correctly on the examples page
+- [ ] All cells executed successfully
+- [ ] Images and plots display correctly
+- [ ] No errors in the build output
+
+### 9. Commit Your Changes
+
+```bash
+# Add your notebook
+git add docs/examples/your_example.ipynb
+
+# Add your card changes
+git add docs/examples/index.qmd
+
+# Commit with a descriptive message
+git commit -m "docs: Add example on [your topic]"
+```
+
+**Commit Message Guidelines:**
+
+Use conventional commits format:
+- `docs:` for documentation (your case!)
+- `feat:` for new features
+- `fix:` for bug fixes
+- `test:` for tests
+
+Examples:
+- `docs: Add signal processing example`
+- `docs: Add visualization tutorial with matplotlib`
+- `docs: Add introduction to pandas DataFrames`
+
+### 10. Push to Your Fork
+
+```bash
+git push origin add-example-YOUR_NAME
+```
+
+### 11. Create a Pull Request
+
+1. Go to https://github.com/bsdlab/aBCI-OSS-example
+2. You'll see a banner saying "Compare & pull request"
+3. Click it
+4. Fill in the PR template:
+   - **Title:** Clear, descriptive (e.g., "Add signal processing example")
+   - **Description:** What does your notebook teach? Why is it useful?
+5. Click "Create Pull Request"
+
+### 12. Respond to Feedback
+
+Your PR will be reviewed by instructors or peers. They might:
+- Suggest improvements
+- Ask questions
+- Request changes
+
+**How to respond:**
+
+1. Make the requested changes locally
+2. Commit them: `git commit -m "Address review feedback"`
+3. Push: `git push origin add-example-YOUR_NAME`
+4. The PR automatically updates!
+
+## Tips for Great Contributions 💡
+
+### Content Tips
+
+- **Start simple**: Don't try to teach everything at once
+- **Be clear**: Explain concepts in simple terms
+- **Show, don't just tell**: Include code examples
+- **Add visuals**: Plots and diagrams help understanding
+- **Test your code**: Make sure all cells run without errors
+
+### Style Tips
+
+- **Use markdown formatting**: Headers, lists, bold, italics
+- **Add code comments**: Explain non-obvious parts
+- **Keep cells focused**: One concept per cell when possible
+- **Show outputs**: Don't hide important results
+- **Check spelling**: Use a spell checker
+
+### Common Mistakes to Avoid
+
+❌ **Don't:**
+- Submit without testing locally
+- Include large data files (use small examples)
+- Forget to explain your code
+- Use absolute file paths
+- Leave cells with errors
+
+✅ **Do:**
+- Test the full build process
+- Use small, generated example data
+- Explain both what and why
+- Use relative paths if needed
+- Ensure all cells execute cleanly
+
+## Getting Help 🆘
+
+Stuck? Here are your options:
+
+1. **Check existing examples**: Look at `docs/examples/` for inspiration
+2. **Read Quarto docs**: https://quarto.org/docs/guide/
+3. **Ask questions**: Open an issue on GitHub
+4. **Talk to classmates**: Collaboration is encouraged!
+5. **Contact instructors**: We're here to help
+
+## Updating Your Pull Request
+
+Need to make changes after submitting?
+
+```bash
+# Make your changes
+# Then commit and push
+git add .
+git commit -m "Update example based on feedback"
+git push origin add-example-YOUR_NAME
+```
+
+The PR updates automatically!
+
+## After Your PR is Merged 🎉
+
+Congratulations! You've contributed to open source. Now:
+
+1. **Update your local repository:**
+   ```bash
+   git checkout main
+   git pull upstream main
+   ```
+
+2. **Delete your branch (optional):**
+   ```bash
+   git branch -d add-example-YOUR_NAME
+   ```
+
+3. **Start a new contribution!**
+
+## Best Practices Summary
+
+- ✅ Fork, don't clone directly
+- ✅ Create a branch for each contribution
+- ✅ Test locally before pushing
+- ✅ Write clear commit messages
+- ✅ Respond promptly to feedback
+- ✅ Keep contributions focused
+- ✅ Document your code
+- ✅ Be respectful and professional
+
+## Code of Conduct
+
+- Be respectful and inclusive
+- Welcome beginners
+- Provide constructive feedback
+- Give credit where due
+- Focus on learning and improvement
+
+## Questions?
+
+- 📧 Open an issue on GitHub
+- 💬 Use repository discussions
+- 🎓 Ask during class
+
+Remember: Everyone was a beginner once. Your contribution matters! 🌟

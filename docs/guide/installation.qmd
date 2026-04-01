@@ -1,0 +1,32 @@
+---
+title: "Installation"
+---
+
+## Requirements
+
+- Python 3.10 or higher
+- pip or uv package manager
+
+## Basic Installation
+
+After pulling this repository, create a local installation with
+
+```bash
+pip install .
+```
+
+Or using uv (faster):
+
+```bash
+uv pip install .
+```
+
+## Development Installation
+
+Clone the repository and install in editable mode:
+
+```bash
+git clone https://github.com/bsdlab/aBCI-OSS-example.git
+cd aBCI-OSS-example
+pip install -e ".[dev]"
+```
