@@ -42,9 +42,9 @@ Your notebook should:
 - ✅ Conclude with key takeaways
 - ✅ Run without errors
 
-## Available Notebooks
-
 Here are the example notebooks available in this repository. Click on any card to view the full tutorial.
+
+## Available Notebooks
 
 ::: {.grid}
 
@@ -71,3 +71,27 @@ Learn the basics of NumPy arrays, including creation, operations, and statistica
 
 Follow the [Contributing Guide](../guide/contributing.qmd) to add your own example notebook to this collection!
 :::
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card}
+
+::: {.card-body}
+### [Inroduction to Shrinkage LDA](sLDA_tutorial.ipynb)
+
+This file explains the basics of LDA. It starts with a brief overview of what it does and how it works.
+It follows up with a coding example and explanation of the used parameters and functions of LDA. 
+
+**Topics**: Overview and Explanation. Coding example. Coding documentation
+
+**Author**: Tom , Dimitra, Jurre, Judith & Yulie (Group 3)
+:::
+:::
+:::
+
+:::
+
+::: {.callout-tip}
+
+
