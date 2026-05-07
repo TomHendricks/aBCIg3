@@ -42,9 +42,10 @@ Your notebook should:
 - ✅ Conclude with key takeaways
 - ✅ Run without errors
 
-Here are the example notebooks available in this repository. Click on any card to view the full tutorial.
-
 ## Available Notebooks
+
+
+Here are the example notebooks available in this repository. Click on any card to view the full tutorial.
 
 ::: {.grid}
 
@@ -70,7 +71,6 @@ Learn the basics of NumPy arrays, including creation, operations, and statistica
 ## Want to add your notebook?
 
 Follow the [Contributing Guide](../guide/contributing.qmd) to add your own example notebook to this collection!
-:::
 
 ::: {.grid}
 
